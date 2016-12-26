@@ -16,6 +16,8 @@ class ColumnsController < ApplicationController
     end
   end
 
+
+
   private
   def master_sprint_params
     params.require(:master_sprint).permit :sprint_id, :date
