@@ -33,8 +33,28 @@
           </p>
           <p class="list-user">
             <%= t "projects.show.developer" %>:
+
             <% @project.developers.each_with_index do |developer, index| %>
+
               <%= link_to developer.user_name, "#" %><%= (index == @project.developers.size - 1)  ? "." : "," %>
+            <% end %>
+          </p>
+          <p class="list-user">
+            <%= t "projects.show.reporter" %>:
+            <% @project.reporters.each_with_index do |reporter, index| %>
+              <%= link_to reporter.user_name, "#" %><%= (index == @project.reporters.size - 1)  ? "." : "," %>
+            <% end %>
+          </p>
+          <p class="list-user">
+            <%= t "projects.show.reviewer" %>:
+            <% @project.reviewers.each_with_index do |reviewer, index| %>
+              <%= link_to reviewer.user_name, "#" %><%= (index == @project.reviewers.size - 1)  ? "." : "," %>
+            <% end %>
+          </p>
+          <p class="list-user">
+            <%= t "projects.show.developer" %>:
+            <% @project.temps.each_with_index do |temp, index| %>
+              <%= link_to temp.user_name, "#" %><%= (index == @project.temps.size - 1)  ? "." : "," %>
             <% end %>
           </p>
         </div>

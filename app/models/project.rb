@@ -33,6 +33,18 @@ class Project < ActiveRecord::Base
     self.members.where(role: 1)
   end
 
+  def reporters
+    self.members.where(role: 2)
+  end
+
+  def reviewers
+    self.members.where(role: 3)
+  end
+
+  def temps
+    self.members.where(role: 4)
+  end
+
   def include_assignee? current_user
     self.members.map(&:user_id).include? current_user.id
   end
